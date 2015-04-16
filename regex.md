@@ -84,4 +84,13 @@ Perl6 使用 `~~` 代替了 Perl5 的 `=~`.
     my @bar = < one two three >;
     / $foo @bar / ==  / 'ab*c' [ one | two | three ] /
 
+正则表达式是一种匹配规则，是函数的一种：
 
+    my $rule = /hello/;
+    say 'match' if 'hello' ~~ $rule;
+
+如果想重用 regex, 就需要用：
+
+    regex number { \d+[ <dot> \d+]? }
+    32.51 ~~ &number;
+    '15 + 4.5' ~~ s:/<number> '+' <number/;

@@ -20,6 +20,16 @@
 
     die "Access denied" unless $password eq "Secret";
 
+## given/when 条件判断
+
+given/when 会从上到下遍历条件，如果遇到符合条件的语句，就会结束条件判断，否则就会执行 `default` 语句后的代码。
+
+    given 1 {
+        when 1 { say 'this is first' }
+        when 1 { say 'this is second' }
+        default { say 'this is default' }
+    }
+    #=> this is first
 
 ## 分支
 
