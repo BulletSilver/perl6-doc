@@ -29,3 +29,22 @@ token, rule 都是禁止回溯的正则表达式，rule 中的空格代表任意
     my $match = test-grammar.parse('40', :$actions);
     say $match; #=> ｢40｣
     say $match.made; #=> 42
+
+通常使用的方法：
+
+    MyGrammar.parse($string, :actions($action-object))
+    MyGrammar.parsefile($filename, :actions($action-object))
+
+Grammar 可以继承：
+
+     grammar Letter {
+         rule text     { <greet> $<body>=<line>+? <close> }
+         rule greet    { [Hi|Hey|Yo] $<to>=\S+? ',' }
+         rule close    { Later dude ',' $<from>=.+ }
+         token line    { \N* \n}
+     }
+
+     grammar FormalLetter is Letter {
+         rule greet { Dear $<to>=\S+? ',' }
+         rule close { Yours sincerely ',' $<from>=.+ }
+     }
