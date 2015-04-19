@@ -19,6 +19,7 @@
 - [文件](https://github.com/songzan/perl6-doc/blob/master/File.md)
 - [Perl 5 到 Perl 6](https://github.com/songzan/perl6-doc/blob/master/Perl5-6.md)
 - [设计语言](https://github.com/songzan/perl6-doc/blob/master/Design-language.md)
+- [匹配结构](https://github.com/songzan/perl6-doc/blob/master/Match.md)
 
 
 

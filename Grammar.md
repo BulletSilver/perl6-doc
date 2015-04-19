@@ -11,6 +11,17 @@ token, rule 都是禁止回溯的正则表达式，rule 中的空格代表任意
     my token non-space-y { once upon a time }
     my rule space-y { once upon a time }
 
+错误信息自定义功能 `:dba('message')`：
+
+    token postfix:sym<[ ]> {
+        :dba('array subscript')
+        '[' ~ ']' <expression>
+    }
+
+如果解析不成功，则错误信息将变成：
+
+    Unable to parse expression in array subscript; couldn't find final ']'
+
 通常的语法设计都是这样的：
 
     use v6;
@@ -48,3 +59,15 @@ Grammar 可以继承：
          rule greet { Dear $<to>=\S+? ',' }
          rule close { Yours sincerely ',' $<from>=.+ }
      }
+
+## Match 数据结构
+
+成功的匹配会返回一个 `Match` 数据结构，保存在 `$/` 中，这个返回值可以在不同的上下文中返回不同的数据结构：
+
+    my $bool-value  = $/.Bool;
+    my $str-value   = $/.Str;
+    my @array-value = $/.Array;
+    my %hash-value  = $/.Hash;
+    my $str-value   = +$/;
+
+

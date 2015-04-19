@@ -80,13 +80,23 @@ Perl6 使用 `~~` 代替了 Perl5 的 `=~`.
 
 ## 变量内插
 
+字符串变量内插通常会将字符串的字面量插入到正则表达式中：
+
     my $foo = "ab*c";
     my @bar = < one two three >;
     / $foo @bar / ==  / 'ab*c' [ one | two | three ] /
 
+如果想插入正则表达式本身：
+
+    my $foo = /ab*c/;
+    'abbc' ~~ / $foo /;
+
 正则表达式是一种匹配规则，是函数的一种：
 
     my $rule = /hello/;
+    my $rule = rx{hello};
+    my $rule = m{hello};
+
     say 'match' if 'hello' ~~ $rule;
 
 如果想重用 regex, 就需要用：
@@ -94,3 +104,11 @@ Perl6 使用 `~~` 代替了 Perl5 的 `=~`.
     regex number { \d+[ <dot> \d+]? }
     32.51 ~~ &number;
     '15 + 4.5' ~~ s:/<number> '+' <number/;
+
+## 捕获值
+
+正则表达式匹配后，通常会捕获一个数据结构，如果是一个数组，通常是从 `$0` 开始：
+
+    / (\d**1..3) <?{ $0 < 256 }> /
+
+如果匹配成功，会返回一个 `Match` 对象，保存在动态局部变量 `$/` 中，如果匹配失败，则返回 `Nil`, `$/` 也将等于 `Nil`.

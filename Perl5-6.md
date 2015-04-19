@@ -234,6 +234,16 @@ Perl 6 真正支持面向对象编程：
     (?<=ar?bitrary* pattern) => <after ar?bitrary* pattern>
     (?<!ar?bitrary* pattern) => <!after ar?bitrary* pattern>
 
+Perl 6 的正则表达式中可以插入任意的空格，相当于 Perl 5 的 `xms` 模式
+
+    / this is hello /xms => / this is hello /
+
+默认情况下，正则表达式中的点 `.`, 可以代表任意字符，包括回车符。
+
+    / . /xms => / . /
+
+Perl 6 中 `\A`, `\z`, `\Z` 没有了。
+
 文件读取更加简单：
 
     # Perl 5

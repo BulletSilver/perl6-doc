@@ -39,10 +39,17 @@ Perl6 首创了 Junction 的数据类型，这种数据类型好像变幻的光�
     > say [1 => 2, 3 => 4].WHAT
     (Array)
 
-可以使用任意函数来操作 Junctions:
+## Bool 布尔值
 
-    if 2 == sqrt(4 | 9 | 16) {
-        say "YaY";
-    }
+`False` 为假，`True` 为真：
+
+    if !False { say 'False is Bool::False' }
+    if True   { say 'True is Bool::True' }
+
+`0`, 空字符串`''`，`Nil` 为假，其余的值都为真：
+
+    if !0   { say '0 is False' }
+    if !''  { say q<'' is False> }
+    if !Nil { say q<Nil is False> }
 
 

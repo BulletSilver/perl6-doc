@@ -10,6 +10,15 @@
 
 使用 Grammar 设计解析语言的规则，将一门语言的代码解析成数据结构。
 
+    grammar lisp-grammar {
+        rule TOP { }
+    }
+    class lisp-actions {
+        # if method have regex, then $/ would be overload
+        method TOP ($match) { ... }
+    }
+    
+
 ## 将数据结构转换成语法树
 
     say 'something' if True;
