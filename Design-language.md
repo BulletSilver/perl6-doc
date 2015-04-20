@@ -11,13 +11,37 @@
 使用 Grammar 设计解析语言的规则，将一门语言的代码解析成数据结构。
 
     grammar lisp-grammar {
-        rule TOP { }
-    }
-    class lisp-actions {
-        # if method have regex, then $/ would be overload
-        method TOP ($match) { ... }
+        rule TOP { ... }
     }
     
+## 将字符串匹配结果 `Match` 对象转换成数据结构：
+
+    #!perl6
+    use JSON::Tiny;
+
+    my $str = 'abcdefghij';
+    grammar my-grammar {
+        token TOP { ^ (..) (..)**2 (..)+ $ }
+    }
+
+    my $match = my-grammar.parse($str);
+    say to-json get-match-ast($match) if $match.Bool;
+    #=> [ "ab", [ "cd", "ef" ], [ "gh", "ij" ] ]
+
+    sub get-match-ast($match) {
+        return $match.Str if has-blank-list($match);
+        my @ast;
+        for $match.kv -> $key, $value {
+            push @ast, get-match-ast($value) if $key ~~ Int;
+        }
+        return [ @ast ] if $match.list ~~ Array;
+        return @ast if $match.list ~~ List;
+    }
+
+    sub has-blank-list($match) { 
+       $match.list.perl eq '().list' ??
+       Bool::True !! Bool::False;
+    }
 
 ## 将数据结构转换成语法树
 

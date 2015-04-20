@@ -27,3 +27,81 @@
     sub common is export {}
     our @horse is export = 'horse';
 
+Perl 6 的发行版 Rakudo 内置了很多的模块：
+
+### Bailador;
+
+Bailador is a port of the Perl Dancer web development framework
+
+use Bailador;
+
+    # simple cases
+    get '/' => sub {
+        "hello world"
+    }
+
+    baile;
+
+### Debugger::UI::CommandLine;
+
+### Digest::MD5;
+
+### File::Find;
+
+Get a lazy list of a directory tree
+
+    use File::Find;
+
+    my @list := find(dir => 'foo');
+    say @list[0..3];
+
+    my $list = find(dir => 'foo');
+    say $list[0..3];
+
+### Grammar::Debugger;
+
+### Grammar::Profiler::Simple;
+
+### HTTP::Easy;
+
+### HTTP::Status;
+
+### JSON::RPC;
+
+### JSON::Tiny;
+
+A simple Perl 6 module for serializing and deserializing JSON5.
+
+    use JSON5::Tiny;
+
+    my $p = '[{"a" : 3,"b" : 4 }]';
+    my $s = from-json($p);
+    my $t = to-json($s);
+
+### LWP::Simple;
+
+### MIME::Base64;
+
+### PSGI;
+
+### SVG::Plot;
+
+### SVG;
+
+### Shell::Command;
+
+### Template::Mojo;
+
+### Term::ANSIColor;
+
+### Test::Mock;
+
+### XML::Writer;
+
+### p6doc;
+
+### panda;
+
+### ufo;
+
+
