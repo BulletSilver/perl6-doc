@@ -116,12 +116,12 @@ Perl5 的财富。
 
 获取字符串指定位置和长度的子字符串：
 
-    say index "Camelia is a butterfly", "a";     # 1
-    say index "Camelia is a butterfly", "a", 2;  # 6
-    say index "Camelia is a butterfly", "er";    # 17
-    say index "Camelia is a butterfly", "Camel"; # 0
-    say index "Camelia is a butterfly", "Onion"; # Int()
-    say index("Camelia is a butterfly", "Onion").defined ?? 'OK' !! 'NOT'; # NOT
+    say index "Camelia is a ", "a";     # 1
+    say index "Camelia is a ", "a", 2;  # 6
+    say index "Camelia is a ", "er";    # 17
+    say index "Camelia is a ", "Camel"; # 0
+    say index "Camelia is a ", "Onion"; # Int()
+    say index("Camelia is a ", "Onion").defined ?? 'OK' !! 'NOT'; # NOT
 
 # 函数 rindex
 
@@ -304,3 +304,4 @@ Perl5 的财富。
     > ' tanks'.trim-leading
     tanks
 
+（未完待续）

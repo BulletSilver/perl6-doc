@@ -51,5 +51,11 @@ Perl6 首创了 Junction 的数据类型，这种数据类型好像变幻的光�
     if !0   { say '0 is False' }
     if !''  { say q<'' is False> }
     if !Nil { say q<Nil is False> }
+    say Bool(10); # => True
+    say Bool('hello world'); # => True
+    say Bool(()); # => False
+    say Bool(0);  # => False
+    say Bool(''); # => False
+    say Bool(""); # => False
 
 

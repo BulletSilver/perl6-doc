@@ -112,3 +112,33 @@ Perl6 使用 `~~` 代替了 Perl5 的 `=~`.
     / (\d**1..3) <?{ $0 < 256 }> /
 
 如果匹配成功，会返回一个 `Match` 对象，保存在动态局部变量 `$/` 中，如果匹配失败，则返回 `Nil`, `$/` 也将等于 `Nil`.
+
+带分隔符的匹配：
+
+    / <ident> +% ',' /
+
+将会匹配：
+    
+    foo,
+    foo,bar,
+
+而下面的正则更灵活一些：
+
+    / <ident> +%% ',' /
+
+将会匹配：
+
+    foo
+    foo,
+    foo,bar
+    foo,bar,
+
+尖括号非常有用：
+
+    token some-word { < hello & world > }
+
+相当于下面的：
+
+    token some-word { [ 'hello' | '&' |  'world' ] }
+
+
