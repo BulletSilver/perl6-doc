@@ -1,4 +1,6 @@
-# Perl 6 中文文档
+# Perl 6 语言
+
+
 
 - [Perl 6 概述](https://github.com/songzan/perl6-doc/blob/master/Introduce.md)
 - [字符串](https://github.com/songzan/perl6-doc/blob/master/String.md)
