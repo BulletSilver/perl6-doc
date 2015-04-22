@@ -12,7 +12,7 @@
 
 现在稳定的版本是 2015.02 版本：
 
-下载地址：[http://rakudo.org/downloads/star/
+下载地址：[http://rakudo.org/downloads/star/]
 (http://rakudo.org/downloads/star/rakudo-star-2015.02.msi)
 
 安装完成后，要将两个文件夹放入环境变量：
