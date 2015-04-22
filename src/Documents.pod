@@ -1,0 +1,77 @@
+=head1 文档
+
+Perl 6 的文档也是要被解释器解析的，所以 Perl 6 定义了复杂的文档规则。充分利用文档系统的优势，可以设计出
+自动测试代码文档系统。
+
+    =begin foo
+
+    =end foo
+
+    my $pod = $=pod[0];
+    $pod ~~ Pod::Block;
+    $pod ~~ Pod::Block::Named;
+    say $pod.name; #=> pod
+
+在文档中的代码可以添加任意空行，但还是一个段落, 而且其中
+的回车不会被删除，但所有的空格还是会被合并：
+
+    $this = 1 * code('block');
+    $which.is_specified(:by<indenting>);
+
+    $which.spans(:newlines);
+
+可以解析的表格形式：
+
+=for table
+    Constants           1
+    Variables           10
+    Subroutines         33
+    Everything else     57
+
+=for table
+    mouse    | mice
+    horse    | horses
+    elephant | elephants    
+
+=table
+    Animal | Legs |    Eats
+    =======================
+    Zebra  +   4  + Cookies
+    Human  +   2  +   Pizza
+    Shark  +   0  +    Fish    
+
+=table
+        Superhero     | Secret          | 
+                      | Identity        | Superpower
+        ==============|=================|================================
+        The Shoveller | Eddie Stevens   | King Arthur's singing shovel
+
+=begin table
+                        Secret
+        Superhero       Identity          Superpower
+        =============   ===============   ===================
+        The Shoveller   Eddie Stevens     King Arthur's
+                                          singing shovel
+
+        Blue Raja       Geoffrey Smith    Master of cutlery
+        Mr Furious      Roy Orson         Ticking time bomb
+                                          of fury
+
+        The Bowler      Carol Pinnsler    Haunted bowling ball
+
+=end table
+
+=table
+    X | O |
+   ---+---+---
+      | X | O
+   ---+---+---
+      |   | X
+
+=table
+    X   O     
+   ===========
+        X   O 
+   ===========
+            X 
+      
