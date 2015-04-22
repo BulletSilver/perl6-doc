@@ -1,0 +1,48 @@
+set nocompatible
+set tabstop=4
+set shiftwidth=4
+set matchpairs+=<:>
+set encoding=utf-8
+set fileencodings=ucs-bom,utf-8,chinese,cp949
+set langmenu=none
+language messages zh_CN.utf-8
+syntax on
+set backspace=indent,eol,start
+set guifont=Consolas:h14
+set guifont=Source_Code_Pro:h11
+set guifont=Yahei_Mono:h11.5
+"set foldmethod=marker
+colorscheme ron
+colorscheme koehler
+colorscheme peachpuff
+colorscheme pablo
+colorscheme desert
+colorscheme murphy
+colorscheme slate
+colorscheme darkblue
+colorscheme torte
+set wrap
+set linebreak
+set formatoptions=croqn2mM1
+set autoindent
+"set textwidth=78
+set expandtab
+"set smartindent
+set showmatch
+set nobackup
+set noswapfile
+set hls
+set novisualbell
+set autoread
+set ambiwidth=double
+filetype plugin on
+filetype indent on
+set shortmess=atI
+set number
+set whichwrap+=<,>,h,l
+set ruler
+set rulerformat=%20(%2*%<%f%=\ %m%r\ %3l\ %c\ %p%%%)
+set ignorecase smartcase
+map <F3> :set scrollbind<CR>
+map <F4> :set noscrollbind<CR>
+setlocal indentkeys+=cino=)0
