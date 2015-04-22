@@ -1,4 +1,4 @@
-# Perl 5 到 Perl 6
+# 从 Perl 5 到 Perl 6
 
 Perl 6 继承了 Perl 5 的优良特性，无情的抛弃了其糟粕，成为一种独立的语言：
 
@@ -8,7 +8,7 @@ Perl 6 继承了 Perl 5 的优良特性，无情的抛弃了其糟粕，成为�
     my @fruits = ('an apple', 'a pear', 'a banana');
     say $fruits[0];
     # Perl 6
-    my @fruits = 'an apple', 'a pear', 'a banana';
+    my @fruits = ('an apple', 'a pear', 'a banana');
     say @fruits[0];
 
 对于不包含空格的单词，可以省略 `qw`:
@@ -61,7 +61,7 @@ Perl 6 中，哈希的元素不在自动引起：
 
 上下文：
     
-    my @array = 1, 2, 3;
+    my @array = (1, 2, 3);
 
     # 可以将数组保存成标量
     my $a = @array; say $a.WHAT; #=> Array

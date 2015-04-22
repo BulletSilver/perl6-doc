@@ -1,6 +1,6 @@
-# 语法
+# Grammar
 
-Grammar 由 regex(token,rule) 组成，当然也可以有 method, 但通常都会用 Actions 分离：
+Grammar 由 regex (token, rule) 组成，当然也可以有 method, 但通常都会用 Actions 分离：
 
 regex 可以定义有效区域，前置 my 或者 our 等变量限制关键字：
 
@@ -45,6 +45,7 @@ token, rule 都是禁止回溯的正则表达式，rule 中的空格代表任意
 
     MyGrammar.parse($string, :actions($action-object))
     MyGrammar.parsefile($filename, :actions($action-object))
+    MyGrammar.subparse($string, :$pos, :$rule :$actions)
 
 Grammar 可以继承：
 
@@ -60,14 +61,5 @@ Grammar 可以继承：
          rule close { Yours sincerely ',' $<from>=.+ }
      }
 
-## Match 数据结构
-
-成功的匹配会返回一个 `Match` 数据结构，保存在 `$/` 中，这个返回值可以在不同的上下文中返回不同的数据结构：
-
-    my $bool-value  = $/.Bool;
-    my $str-value   = $/.Str;
-    my @array-value = $/.Array;
-    my %hash-value  = $/.Hash;
-    my $str-value   = +$/;
 
 

@@ -1,4 +1,4 @@
-# 安装 Perl 6
+# 安装
 
 [相关英文文档](http://rakudo.org/how-to-get-rakudo/)
 
@@ -65,8 +65,10 @@ Vim 中文文档很完整。[地址](http://vimcdoc.sourceforge.net/)
 
 想拥有以上界面，当然还需要一个好字体：
 
-[微软雅黑 Vim 专用](https://github.com/songzan/perl6-doc/blob/master/tools/yahei.ttf?raw=true)
+[微软雅黑 Vim 专用字体](https://github.com/songzan/perl6-doc/blob/master/tools/yahei.ttf?raw=true)
 
 [Vim 配置文件](https://github.com/songzan/perl6-doc/blob/master/tools/_vimrc)
 
-将这个文件的内容拷贝到 Vim 安装目录 `C:\Program Files\Vim` 中的 `_vimrc` 文件中（原有的内容要删除). 然后就可以享受 Vim 带来的快乐了。 
+将这个文件的内容拷贝到 Vim 安装目录 `C:\Program Files\Vim` 中的 `_vimrc` 文件中（原有的内容要删除). 然后就可以享受 Vim 带来的快乐了。
+
+（未完待续）

@@ -12,6 +12,22 @@ Perl 6 文件处理内置了很多的方法：
 
     my $content = 'file-name'.IO.slurp;
 
+也可以将文件中的内容按照行拆分成列表：
+
+    my @lines = 'file-name'.IO.lines;
+
+如果文件较大，就一次读一部分：
+
+    my $fh = open 'file-name';
+    while my $line = $fh.get {
+        # do something;
+    }
+
+一次读一个字符的话，就比较慢了：
+
+    my $fh = open 'file-name';
+    my $line = $fh.getc;
+
 读入一个文件的内容，然后处理后写回去：
 
     spurt "testfile", "data and stuff\n";
@@ -64,4 +80,4 @@ Perl 6 文件处理内置了很多的方法：
     # 删除目录 'newdir'
     rmdir "newdir" or die "$!";
 
-This documentation is provided under the terms of the Artistic License 2.0.    
+This documentation is provided under the terms of the Artistic License 2.0.

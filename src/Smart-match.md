@@ -1,5 +1,6 @@
-# 智能匹配符 `~~`
-#
+# 智能匹配符
+
+    `~~`
 
 智能匹配符号主要用于正则表达式的匹配：
 
@@ -24,6 +25,7 @@
     abracadabra
     > if $str ~~ m:ov/a(.*)a/ { say ~@().list }
     abracadabra acadabra adabra abra
+
     > my $str = 'this is a word'
     this is a word
     > say ~($str ~~ m:ov/\w+/)
@@ -35,8 +37,17 @@
 
     $str = "abracadabra";
 
-     if $str ~~ m:exhaustive/ a (.*?) a / {
+     if $str ~~ m:ex/ a (.*?) a / {
          say "@()";
          # br brac bracad bracadabr c cad cadabr d dabr br
+     }
+
+:g（:global) 模式，禁止回溯：
+
+    $str = "abracadabra";
+
+     if $str ~~ m:g/ a (.*?) a / {
+         say @();
+         # abra ada
      }
 

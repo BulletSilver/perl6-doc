@@ -1,4 +1,4 @@
-## 字符串及相关函数
+## 字符串
 
 Perl6 是处理语言的语言，所以其最强大的功能都体现在处理字符串的能力上，这继承了
 Perl5 的财富。
@@ -28,7 +28,7 @@ Perl5 的财富。
     chop 'string';
     chop('string');
 
-# 函数 chomp
+# chomp
 
 剔除字符串结尾的回车符, 在 Unix 和 Windows 系统中的回车符都可以一次性的剔除：
 
@@ -41,7 +41,7 @@ Perl5 的财富。
     > "str\n\r".chomp.perl
     "str\n"
 
-# 函数 chop
+# chop
 
 剔除结尾指定长度的字符，默认为 1 个, 小于 1 或大于字符串长度的截取都是无效的：
 
@@ -58,7 +58,7 @@ Perl5 的财富。
     > "string".chop(-1)
     string
 
-# 函数 lc
+# lc
 
 将字符串中大写的部分转换成小写，Perl6 是一门大小写敏感的语言：
 
@@ -71,7 +71,7 @@ Perl5 的财富。
     > '123'.lc
     123
 
-# 函数 uc
+# uc
 
 将字符串中小写的部分转换成大写：
     
@@ -80,7 +80,7 @@ Perl5 的财富。
     > 'HEllo'.uc
     HELLO
 
-# 函数 tc
+# tc
 
 将首字符大写：
 
@@ -89,7 +89,7 @@ Perl5 的财富。
     > 'HELLO'.tc
     HELLO
 
-# 函数 tclc
+# tclc
 
 将首字母大写，其余的小写：
 
@@ -98,21 +98,21 @@ Perl5 的财富。
     > 'HELLO'.tclc
     Hello
 
-# 函数 wordcase
+# wordcase
 
 将每个单词都进行 tclc 的操作：
 
     > 'hello world'.wordcase
     Hello World
 
-# 函数 chars
+# chars
 
 获取字符串的长度：
 
     > 'hello'.chars 
     5
 
-# 函数 index
+# index
 
 获取字符串指定位置和长度的子字符串：
 
@@ -123,7 +123,7 @@ Perl5 的财富。
     say index "Camelia is a ", "Onion"; # Int()
     say index("Camelia is a ", "Onion").defined ?? 'OK' !! 'NOT'; # NOT
 
-# 函数 rindex
+# rindex
 
 从后往前获取指定子字符串在字符串中的位置：
 
@@ -134,7 +134,7 @@ Perl5 的财富。
     > 'hello'.rindex('o')
     4
 
-# 函数 split
+# split
 
 根据指定字符或匹配拆分字符串：
 
@@ -149,7 +149,7 @@ Perl5 的财富。
     > 'a,b;c'.split(/<[;,]>/).perl
     ("a", "b", "c").list
 
-# 函数 comb
+# comb
 
 获取字符串中匹配指定模式的子字符串列表（注:列表只有一个元素时，会多一个逗号）：
 
@@ -164,7 +164,7 @@ Perl5 的财富。
     > 'ad;bd;cd'.comb(/\w+\;\w+/).perl
     ("ad;bd",).list
 
-# 函数 lines
+# lines
 
 按照回车拆分字符串，也就是按照行来分解字符串：
 
@@ -177,7 +177,7 @@ Perl5 的财富。
     > "a\n\n\n".lines.perl
     ("a", "", "").list
 
-# 函数 words
+# words
 
 将字符串拆分成单词
 
@@ -190,7 +190,7 @@ Perl5 的财富。
     > "foo:bar\tbaz".words.perl
     ("foo:bar", "baz").list
 
-# 函数 flip
+# flip
 
 反转字符串
 
@@ -199,7 +199,7 @@ Perl5 的财富。
     > 'abba'.flip
     abba
 
-# 函数 subst
+# subst
 
 使用一个匹配或字符串替换字符串：
 
@@ -216,7 +216,7 @@ Perl5 的财富。
     > "Hey foo foo foo".subst(/foo/, 'bar', :nth(3))
     Hey foo foo bar
 
-# 函数 substr
+# substr
 
 返回字符串指定位置指定长度的子字符串：
 
@@ -225,7 +225,7 @@ Perl5 的财富。
     substr("Long string", 6, *-1);   # trin
     substr("Long string", *-3, *-1); # in
 
-# 函数 succ
+# succ
 
 返回字符串代表的数字加1：
 
@@ -237,7 +237,7 @@ Perl5 的财富。
     'α'.succ    # β
     'a9'.succ   # b0
 
-# 函数 pred
+# pred
 
 将字符串中的数字递减（尤其用在文件名的生成上）：
 
@@ -245,7 +245,7 @@ Perl5 的财富。
     'a0'.pred           # Failure
     'img002.png'.pred   # img001.png
 
-# 函数 ord
+# ord
 
 返回字符串第一个字符的 codepoints (ASC 值）：
 
@@ -258,7 +258,7 @@ Perl5 的财富。
     > 's'.ord
     115
 
-# 函数 ords
+# ords
 
 返回字符串每个字符的 codepoints(ASC 值）：
 
@@ -267,7 +267,7 @@ Perl5 的财富。
     > 'str'.ords.perl
     (115, 116, 114).list
 
-# 函数 indent
+# indent
 
 将字符串每行缩进指定的字符：
 
@@ -281,7 +281,7 @@ Perl5 的财富。
     > "  hello world\nthanks".indent(2).perl
     "    hello world\n  thanks"
 
-# 函数 trim
+# trim
 
 剔除字符串首尾的空格：
 
@@ -290,14 +290,14 @@ Perl5 的财富。
     > (trim ' hello world ').perl
     "hello world"
 
-# 函数 trim-trailing
+# trim-trailing
 
 剔除字符串后后面的空格：
 
     > 'tanks  '.trim-trailing
     tanks
 
-# 函数 trim-leading
+# trim-leading
 
 剔除字符串开始的空格：
 
