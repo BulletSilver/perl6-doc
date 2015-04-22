@@ -20,7 +20,7 @@
 
 - [正则表达式](https://github.com/songzan/perl6-doc/blob/master/src/regex.md)
 
-- [内置 token]((https://github.com/songzan/perl6-doc/blob/master/src/Base-token.md)
+- [内置 token](https://github.com/songzan/perl6-doc/blob/master/src/Base-token.md)
 
 - [智能匹配](https://github.com/songzan/perl6-doc/blob/master/src/Smart-match.md)
 
