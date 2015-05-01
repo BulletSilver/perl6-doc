@@ -73,8 +73,31 @@ Perl6 的大括号比 Ruby 的 end 更加简洁，也可以少打很多字母。
 
 ## loop 循环
 
+条件循环：
+
     loop (my $x = 2; $x < 100; $x = $x**2) {
         say $x;
     }
+
+无限循环
+
+    loop { }
+    
+## do
+
+强制对 Block 进行运算：
+
+    > True and { 42.say }
+    -> ($_? is parcel) { #`(Block|73930904) ... }
+    > True and do { 42.say }
+    42
+
+## repeat { .. } while condition;
+
+至少会对外面的 condition 运算一次.
+
+## repeat { .. } until condition;
+
+至少会对 condition 进行一次运算
 
 （完）

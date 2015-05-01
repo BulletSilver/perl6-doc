@@ -22,6 +22,11 @@ Junctions 意思是`它们之中的任意一个`, 这种说法在自然语言中
         say "See you on $day";
     }
 
+    say <1 2 3>.any; # any-Junction
+    say <1 2 3>.all; # all-Junction
+    say <1 2 3>.one; # one-Junction
+    say <1 2 3>.none; # none-Junction
+
 当然可以设计使用 Junctions 作为参数的函数：
 
     sub dump-yaml(Junction $stuff) {

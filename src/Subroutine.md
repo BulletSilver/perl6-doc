@@ -85,4 +85,16 @@
     my @list = (1,2,3);
     b(|@list); # 1 2 3
 
+Constraint
+
+在参数中也可以设置条件，类似于 SQL 的条件：
+
+    sub abb (Str $thing where { .chars >= 10 }) {}
+
+在函数中可以可以设置 placeholder 变量：
+
+    sub abb { $^a + $^b }
+
+将依次从参数中取出一个一个的变量。
+
 (end)

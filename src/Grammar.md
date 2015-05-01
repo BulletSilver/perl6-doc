@@ -61,5 +61,11 @@ Grammar 可以继承：
          rule close { Yours sincerely ',' $<from>=.+ }
      }
 
+声明不捕获的 regex/token/rule, 使用前置的 `&`:
 
+    my regex number { <.digit>+ }
+
+    grammar hello {
+        say '12' ~~ / <&number> /;
+    }
 

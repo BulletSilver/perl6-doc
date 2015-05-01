@@ -12,6 +12,10 @@ Perl 6 文件处理内置了很多的方法：
 
     my $content = 'file-name'.IO.slurp;
 
+也可以这么写：
+
+    my $content = slurp 'file-name';
+
 也可以将文件中的内容按照行拆分成列表：
 
     my @lines = 'file-name'.IO.lines;

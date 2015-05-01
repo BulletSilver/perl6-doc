@@ -1,4 +1,4 @@
-## 散列 Hash
+## 散列
 
 Perl6 的 Hash 是由 pair 组成的无序集合:
 

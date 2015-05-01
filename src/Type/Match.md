@@ -23,29 +23,9 @@ Match 对象也是由 Match 对象构成的，所以也可以把 `Match` 对象�
     > say ('string' ~~ / str /).orig
     string
 
-### from
-
-### to
-
-### made
-
 ### ast
 
 是方法 `made` 的别名函数
-
-### Str
-
-### caps
-
-### chunks
-
-### list
-
-### hash
-
-### prematch
-
-### postmatch
 
 ### make
 

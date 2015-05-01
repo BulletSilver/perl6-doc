@@ -30,6 +30,10 @@ Perl 6 的 grammar 就是描述语言语法的专用语言，通过 grammar 可�
         rule TOP { ... }
     }
     
+还需要设计相应的 action 类，来解析对应的数据结构，进行简单的变换。
+经过简单变换的数据结构，应当是 good parts 部分，将各种变形的语法
+结构，转换成统一的结构。
+
 ## 2. 将通过 grammar 解析出的数据结构转换成语法树：
 
 通常的语言转换项目，只是针对特定的语言进行设计，例如 Coffee Script, 
@@ -75,5 +79,31 @@ Haskell 语言有一个项目 Pandoc，定义了一种通用的描述标记语�
 
     say 'something' if True;
     => (if True (say 'something'))
+
+## 4. 变换数据结构
+
+当代码转换成内部的数据结构后，语言的转换就到了后台。
+
+数据被放到了一个一个的箱子里，被贴上标签。有的贴的多，有的贴的少。
+
+语言转换不是解释器，不对数据进行运算，只对语法结构进行转换。
+
+    (Sub say) (Str 'something') (Condition-keyword if) (Expression True))
+
+这个似乎太复杂了，但如果不标记数据类型，那么如何确定数据类型呢？
+
+能否单独保存这个关键字呢？
+
+    > (Sub &say)
+    #=> error
+
+REPL 是解释器，要对所有的东西进行解释，能否有中间保存的呢？
+
+    > (Sub 'say')
+    #=> error
+
+github 又出问题了，看样为了速度起见，还是放在 oschina 上比较好。
+
+
 
 (完)
