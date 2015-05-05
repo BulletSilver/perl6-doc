@@ -353,11 +353,11 @@ Sample:
 
 Two sets of relation operators. One is to compare numerically the other is to compare as strings, based on the ASCII table.
 
-    Numeric     String (ASCII)        Meaning
+    Numeric     String (ASCII)     Meaning
         ==        eq                equal
         !=        ne                not equal
-        <        lt                less than
-        >        gt                greater than
+        <         lt                less than
+        >         gt                greater than
         <=        le                less than or equal
         >=        ge                greater then or equal
 
