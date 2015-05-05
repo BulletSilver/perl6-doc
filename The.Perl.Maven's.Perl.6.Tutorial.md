@@ -1,177 +1,333 @@
 The Perl Maven's Perl 6 Tutorial
 
 1. Introduction to Perl 6
+
   1.1 Getting started
+
   1.2 Other resources
+
   1.3 Installing Rakudo Perl 6
+
   1.4 Development Environment
+
   1.5 Running Rakudo
+
   1.6 Hello World
+
   1.7 Comments
+
   1.8 POD - Plain Old Documentation
 
 2. First steps in Perl 6
+
   2.1 Hello World - scalar variables
+
   2.2 Hello World - interpolation
+
   2.3 Reading from the keyboard
+
   2.4 Numerical operations
+
   2.5 Automatically convert string to number
+
   2.6 String operators
+
   2.7 String concatenation
+
   2.8 String repetition
+
   2.9 if statement - comparing values
+
   2.10 Ternary Operator
+
   2.11 Comparison Operators
+
   2.12 Boolean expressions (logical operators)
+
   2.13 Chained comparisons
+
   2.14 Comparing values - Calculator
+
   2.15 Calculator - given
+
   2.16 String functions: index
+
   2.17 String functions: substr
+
   2.18 Super-or (junctions)
 
 3. Files in Perl 6
+
   3.1 exit
+
   3.2 warn
+
   3.3 die
+
   3.4 Twigils and special variables
+
   3.5 Read line from file
+
   3.6 Read all the lines with get
+
   3.7 Process a file line by line
+
   3.8 Write to a file
+
   3.9 Open file modes
+
   3.10 slurp
+
   3.11 Read lines into array
+
   3.12 Exercise: Print sum of numbers
+
   3.13 Solution: Print sum of numbers
 
 4. Perl 6 Lists and Arrays
+
   4.1 List Literals, list ranges
+
   4.2 List Assignment
+
   4.3 Swap two values
+
   4.4 Loop over elements of list with for
+
   4.5 Create array, go over elements
+
   4.6 Array elements (create menu)
+
   4.7 Array assignment
+
   4.8 Command line options
+
   4.9 Process CSV file
+
   4.10 join
+
   4.11 The uniq functions
+
   4.12 Looping over a list of values one at a time, two at a time and more
+
   4.13 Looping over any number of elements
+
   4.14 Missing values
+
   4.15 Iterating over more than one array in parallel
+
   4.16 Z as in zip
+
   4.17 xx - string multiplicator
+
   4.18 sort values
+
   4.19 Transform arrays and lists using map
 
 5. Meta Operators
+
   5.1 What are the meta operators
+
   5.2 Assignment Operators
+
   5.3 Method invocation in assignment
+
   5.4 Calling a function during assignment
+
   5.5 Negated Relation Operators
+
   5.6 Reversed operators
+
   5.7 Hyper Operators
+
   5.8 Reduction operators
+
   5.9 Reduction Triangle operators
+
   5.10 Cross operators
 
+
 6. Perl 6 Hashes
+
   6.1 Hashes (Associative Arrays)
+
   6.2 Fetching data from a hash
+
   6.3 Multidimensional hashes
+
   6.4 Count words
+
   6.5 Overview of hashes
+
   6.6 slurp hash
+
   6.7 kv
+
   6.8 Looping over keys of a hash
 
+
 7. Subroutines
+
   7.1 Subroutines in Perl 6
+
   7.2 Simple definition with required parameters
+
   7.3 Subroutine with arbitrary number of parameters
+
   7.4 Passing arrays and hashes
+
   7.5 Multiple signatures
+
   7.6 Optional parameters
+
   7.7 Named only parameters
+
   7.8 No parameter definition - perl 5 style
+
   7.9 Fibonacci
+
   7.10 Creating Operators
+
   7.11 Create your own operator
 
+
 8. Perl 6 Regexes
+
   8.1 Regexes in Perl 6
+
   8.2 Match digit
+
   8.3 Match Any character
+
   8.4 Escape characters
+
   8.5 Spaces in regex
+
   8.6 End of string anchors
+
   8.7 Ranges
+
   8.8 Regex Arithmetic
+
   8.9 Regex Quantifier
+
   8.10 Quantifier 2
+
   8.11 Match several words
+
   8.12 Alternates
+
   8.13 Match object
+
   8.14 Capture
+
   8.15 Named Regex
+
   8.16 Capture with quantifier
+
   8.17 Reuse capture
+
   8.18 Word boundary
+
   8.19 Rules
+
   8.20 Tokens
+
   8.21 Replace
+
   8.22 Grammar
+
   8.23 Grammar with error handling
+
   8.24 Grammar that is easier to extend
+
   8.25 Grammar subclass
 
+
 9. Junctions in Perl 6
+
   9.1 Junctions
+
   9.2 More tutorial with Junctions
 
+
 10. Modules in Perl 6
+
   10.1 Exporting subs from modules
 
+
+
 11. Object Oriented Perl 6
+
   11.1 Simple Point class
+
   11.2 Read/write attributes and accessors
+
   11.3 Class Methods
+
   11.4 Private Attributes
+
   11.5 Method with parameters
+
   11.6 Inheritence of classes
+
   11.7 Classes in Perl 6
 
+
 12. Testing in Perl 6
+
   12.1 skip a test
 
+
+
 13. Perl 5 to Perl 6
+
   13.1 Intro
+
   13.2 Hello World
+
   13.3 Scalars
+
   13.4 Arrays
+
   13.5 Hashes
+
   13.6 Control Structures
+
   13.7 Functions
+
   13.8 Files
+
   13.9 Modules, Classes
+
   13.10 Perl 5 to Perl 6
 
+
 14. Shell to Perl 6
+
   14.1 Intro
+
   14.2 Running external command from Perl 6 (shell, QX)
+
   14.3 Unix commands in Perl 6
+
   14.4 awk
+
   14.5 cat
+
   14.6 cd in Perl 6
 
+
 15. Appendix
+
   15.1 grok and App::Grok
+
   15.2 Using 3rd party Perl 6 modules
+
   15.3 Timestamp and elapsed time in Perl 6
+
   15.4 Thanks
+
 
 ## 1. Introduction to Perl 6
 
